@@ -11,6 +11,7 @@ const _Tool = types
   .model("PolygonTool", {
     group: "segmentation",
     shortcut: "P",
+    smart: true, // for cvt feature
   })
   .views((self) => {
     const Super = {
@@ -134,8 +135,9 @@ const _Tool = types
 
           self.currentArea.notifyDrawingFinished();
           self.setDrawing(false);
-          self.currentArea = null;
           self.mode = "viewing";
+          Super._finishDrawing(); // for cvt feature
+          self.currentArea = null;
           self.annotation.afterCreateResult(currentArea, control);
         } else {
           Super._finishDrawing();
