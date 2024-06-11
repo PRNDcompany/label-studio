@@ -32,9 +32,19 @@ poetry run python label_studio/manage.py runserver
 ```
 cd web
 yarn
-yarn ls:watch
 ```
-```
-# new terminal
-yarn lsf:watch
-```
+
+- real time watch
+    ```
+    yarn ls:watch
+    ```
+
+    ```
+    # new terminal
+    yarn lsf:watch
+    ```
+
+- build
+    ```
+    yarn build
+    ```
